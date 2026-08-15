@@ -49,7 +49,7 @@ input {
     border-radius: 12px;
     font-size: 17px;
     outline: none;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -59,13 +59,8 @@ button {
     border-radius: 12px;
     font-size: 17px;
     font-weight: bold;
-    cursor: pointer;
     background: #22c55e;
     color: white;
-}
-
-button:hover {
-    opacity: 0.9;
 }
 
 .error {
@@ -88,20 +83,16 @@ button:hover {
 .operator-info {
     font-size: 14px;
     color: #cbd5e1;
-    margin-bottom: 12px;
+    margin-top: 5px;
 }
 
 .package {
-    border: 2px solid transparent;
-    background: rgba(255,255,255,0.07);
-    padding: 14px;
-    border-radius: 12px;
+    padding: 15px;
     margin: 8px 0;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.07);
     cursor: pointer;
-}
-
-.package:hover {
-    border-color: #22c55e;
 }
 
 .package.selected {
@@ -111,8 +102,8 @@ button:hover {
 
 .price {
     float: right;
-    font-weight: bold;
     color: #4ade80;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -121,103 +112,106 @@ button:hover {
 
 <div class="container">
 
-    <h1>📱 Paketim</h1>
+<h1>📱 Paketim</h1>
 
-    <!-- Operator -->
-    <div class="card">
-        <label>Operatoru seçin</label>
+<div class="card">
 
-        <select id="operator">
-            <option value="">Operator seçin</option>
-            <option value="azercell">Azercell</option>
-            <option value="bakcell">Bakcell</option>
-            <option value="nar">Nar</option>
-        </select>
+<label>Operatoru seçin</label>
 
-        <div id="operatorInfo" class="operator-info"></div>
-    </div>
+<select id="operator">
+<option value="">Operator seçin</option>
+<option value="azercell">Azercell</option>
+<option value="bakcell">Bakcell</option>
+<option value="nar">Nar</option>
+</select>
 
+<div id="operatorInfo" class="operator-info"></div>
 
-    <!-- Paket -->
-    <div class="card">
-
-        <label>Paket seçin</label>
-
-        <div class="package" data-price="3">
-            5 GB <span class="price">3 AZN</span>
-        </div>
-
-        <div class="package" data-price="7">
-            10 GB <span class="price">7 AZN</span>
-        </div>
-
-        <div class="package" data-price="10">
-            15 GB <span class="price">10 AZN</span>
-        </div>
-
-        <div class="package" data-price="20">
-            40 GB <span class="price">20 AZN</span>
-        </div>
-
-        <div class="package" data-price="30">
-            80 GB <span class="price">30 AZN</span>
-        </div>
-
-        <div id="packageError" class="error">
-            Zəhmət olmasa paket seçin.
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- Telefon -->
-    <div class="card">
+<div class="card">
 
-        <label>Mobil nömrə</label>
+<label>Paket seçin</label>
 
-        <input
-            type="tel"
-            id="phone"
-            placeholder="050-123-45-67"
-            maxlength="12"
-            inputmode="numeric"
-            autocomplete="tel"
-        >
+<div class="package" data-name="5 GB" data-price="3">
+5 GB
+<span class="price">3 AZN</span>
+</div>
 
-        <div id="phoneError" class="error"></div>
+<div class="package" data-name="10 GB" data-price="7">
+10 GB
+<span class="price">7 AZN</span>
+</div>
 
-        <div id="phoneSuccess" class="success">
-            ✓ Nömrə düzgündür
-        </div>
+<div class="package" data-name="15 GB" data-price="10">
+15 GB
+<span class="price">10 AZN</span>
+</div>
 
-    </div>
+<div class="package" data-name="40 GB" data-price="20">
+40 GB
+<span class="price">20 AZN</span>
+</div>
+
+<div class="package" data-name="80 GB" data-price="30">
+80 GB
+<span class="price">30 AZN</span>
+</div>
+
+<div id="packageError" class="error">
+Zəhmət olmasa paket seçin.
+</div>
+
+</div>
 
 
-    <!-- Ödəniş -->
-    <div id="paymentSection" class="card hidden">
+<div class="card">
 
-        <h2>💳 Ödəniş</h2>
+<label>Mobil nömrə</label>
 
-        <p>
-            Seçilmiş paket:
-            <strong id="selectedPackage"></strong>
-        </p>
+<input
+type="tel"
+id="phone"
+placeholder="050-123-45-67"
+maxlength="13"
+inputmode="numeric"
+autocomplete="tel"
+>
 
-        <p>
-            Nömrə:
-            <strong id="selectedPhone"></strong>
-        </p>
+<div id="phoneError" class="error"></div>
 
-        <p>
-            Məbləğ:
-            <strong id="selectedPrice"></strong>
-        </p>
+<div id="phoneSuccess" class="success">
+✓ Nömrə düzgündür
+</div>
 
-        <button onclick="confirmPayment()">
-            Ödənişə davam et
-        </button>
+</div>
 
-    </div>
+
+<div id="paymentSection" class="card hidden">
+
+<h2>💳 Ödəniş</h2>
+
+<p>
+Paket:
+<strong id="selectedPackage"></strong>
+</p>
+
+<p>
+Nömrə:
+<strong id="selectedPhone"></strong>
+</p>
+
+<p>
+Məbləğ:
+<strong id="selectedPrice"></strong>
+</p>
+
+<button onclick="confirmPayment()">
+Ödənişə davam et
+</button>
+
+</div>
 
 </div>
 
@@ -230,6 +224,7 @@ const phoneError = document.getElementById("phoneError");
 const phoneSuccess = document.getElementById("phoneSuccess");
 const paymentSection = document.getElementById("paymentSection");
 const operatorInfo = document.getElementById("operatorInfo");
+const packageError = document.getElementById("packageError");
 
 let selectedPackage = null;
 
@@ -237,9 +232,13 @@ let selectedPackage = null;
 /* Operator prefiksləri */
 
 const prefixes = {
+
     azercell: ["050", "051"],
+
     bakcell: ["055", "099"],
+
     nar: ["070", "077"]
+
 };
 
 
@@ -248,17 +247,23 @@ const prefixes = {
 operator.addEventListener("change", function() {
 
     phone.value = "";
+
     phoneError.style.display = "none";
+
     phoneSuccess.style.display = "none";
+
     paymentSection.classList.add("hidden");
 
-    if (!this.value) {
+    if (this.value === "") {
+
         operatorInfo.textContent = "";
+
         return;
+
     }
 
     operatorInfo.textContent =
-        "İcazə verilən prefikslər: " +
+        "İcazə verilən kodlar: " +
         prefixes[this.value].join(" / ");
 
 });
@@ -270,19 +275,23 @@ document.querySelectorAll(".package").forEach(function(pkg) {
 
     pkg.addEventListener("click", function() {
 
-        document.querySelectorAll(".package")
-        .forEach(function(item) {
+        document.querySelectorAll(".package").forEach(function(item) {
+
             item.classList.remove("selected");
+
         });
 
         this.classList.add("selected");
 
         selectedPackage = {
-            name: this.textContent.trim(),
+
+            name: this.dataset.name,
+
             price: this.dataset.price
+
         };
 
-        document.getElementById("packageError").style.display = "none";
+        packageError.style.display = "none";
 
         checkPhone();
 
@@ -291,77 +300,118 @@ document.querySelectorAll(".package").forEach(function(pkg) {
 });
 
 
-/* Nömrəni avtomatik formatlama */
+/* Nömrə daxil edilməsi */
 
 phone.addEventListener("input", function() {
 
     let numbers = this.value.replace(/\D/g, "");
 
-    /* Azərbaycanda nömrə 10 rəqəm olur */
+    /*
+       Azərbaycan mobil nömrəsi:
+       0501234567 = 10 rəqəm
+    */
 
     if (numbers.length > 10) {
+
         numbers = numbers.substring(0, 10);
+
     }
+
 
     let formatted = "";
 
+
+    /* 050 */
+
     if (numbers.length > 0) {
-        formatted += numbers.substring(0, 3);
+
+        formatted = numbers.substring(0, 3);
+
     }
+
+
+    /* 123 */
 
     if (numbers.length > 3) {
+
         formatted += "-" + numbers.substring(3, 6);
+
     }
+
+
+    /* 45 */
 
     if (numbers.length > 6) {
+
         formatted += "-" + numbers.substring(6, 8);
+
     }
+
+
+    /* 67 */
 
     if (numbers.length > 8) {
+
         formatted += "-" + numbers.substring(8, 10);
+
     }
 
-    this.value = formatted;
+
+    phone.value = formatted;
 
     checkPhone();
 
 });
 
 
-/* Nömrəni yoxlama */
+/* Nömrəni yoxla */
 
 function checkPhone() {
 
     const selectedOperator = operator.value;
 
-    if (!selectedOperator) {
-        phoneError.textContent = "Əvvəlcə operatoru seçin.";
+
+    if (selectedOperator === "") {
+
+        phoneError.textContent =
+            "Əvvəlcə operatoru seçin.";
+
         phoneError.style.display = "block";
+
         phoneSuccess.style.display = "none";
+
         paymentSection.classList.add("hidden");
+
         return false;
+
     }
+
 
     const numbers = phone.value.replace(/\D/g, "");
 
-    /* 10 rəqəm yoxdursa */
 
-    if (numbers.length < 10) {
+    /* Tam 10 rəqəm olmalıdır */
+
+    if (numbers.length !== 10) {
 
         phoneError.textContent =
             "Nömrə 10 rəqəmdən ibarət olmalıdır.";
 
         phoneError.style.display = "block";
+
         phoneSuccess.style.display = "none";
+
         paymentSection.classList.add("hidden");
 
         return false;
+
     }
 
 
-    /* Prefiksi yoxla */
+    /* Operator kodunu yoxla */
 
     const prefix = numbers.substring(0, 3);
+
 
     if (!prefixes[selectedOperator].includes(prefix)) {
 
@@ -369,31 +419,38 @@ function checkPhone() {
             "Bu nömrə seçilmiş operatora aid deyil.";
 
         phoneError.style.display = "block";
+
         phoneSuccess.style.display = "none";
+
         paymentSection.classList.add("hidden");
 
         return false;
+
     }
 
 
     /* Nömrə düzgündür */
 
     phoneError.style.display = "none";
+
     phoneSuccess.style.display = "block";
 
-    showPayment();
+
+    if (selectedPackage !== null) {
+
+        showPayment();
+
+    }
+
 
     return true;
+
 }
 
 
-/* Ödəniş bölməsini göstər */
+/* Ödəniş bölməsi */
 
 function showPayment() {
-
-    if (!selectedPackage) {
-        return;
-    }
 
     document.getElementById("selectedPackage").textContent =
         selectedPackage.name;
@@ -409,22 +466,30 @@ function showPayment() {
 }
 
 
-/* Ödəniş */
+/* Ödənişə davam */
 
 function confirmPayment() {
 
-    if (!selectedPackage) {
-        document.getElementById("packageError").style.display = "block";
+    if (selectedPackage === null) {
+
+        packageError.style.display = "block";
+
         return;
+
     }
 
+
     if (!checkPhone()) {
+
         return;
+
     }
+
 
     alert(
         "Məlumatlar qəbul edildi.\n\n" +
         "Nömrə: " + phone.value + "\n" +
+        "Paket: " + selectedPackage.name + "\n" +
         "Məbləğ: " + selectedPackage.price + " AZN"
     );
 
