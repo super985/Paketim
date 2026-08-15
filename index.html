@@ -3,119 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Paketim</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#111827,#1e293b);
+    color:white;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #111827, #1e293b);
-    color: white;
+.container{
+    max-width:450px;
+    margin:auto;
+    padding:20px;
 }
 
-.container {
-    max-width: 450px;
-    margin: auto;
-    padding: 20px;
+h1{text-align:center}
+
+.card{
+    background:rgba(255,255,255,.08);
+    padding:20px;
+    border-radius:18px;
+    margin-bottom:18px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
 }
 
-.card {
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    border-radius: 18px;
-    margin-bottom: 18px;
+select,input{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:10px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#22c55e;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    margin-top:8px;
 }
 
-select,
-input {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    outline: none;
+button:disabled{
+    background:#64748b;
 }
 
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    background: #22c55e;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    margin-top: 8px;
+.package{
+    padding:15px;
+    margin:8px 0;
+    border-radius:12px;
+    background:rgba(255,255,255,.07);
+    border:2px solid transparent;
 }
 
-button:disabled {
-    background: #64748b;
-    opacity: 0.6;
+.package.selected{
+    border-color:#22c55e;
 }
 
-.package {
-    padding: 15px;
-    margin: 8px 0;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.07);
-    border: 2px solid transparent;
-    cursor: pointer;
+.price{
+    float:right;
+    color:#4ade80;
+    font-weight:bold;
 }
 
-.package.selected {
-    border-color: #22c55e;
-    background: rgba(34,197,94,0.15);
+.error{
+    color:#ff6b6b;
+    display:none;
+    font-size:14px;
 }
 
-.price {
-    float: right;
-    color: #4ade80;
-    font-weight: bold;
+.success{
+    color:#4ade80;
+    display:none;
+    font-size:14px;
 }
 
-.error {
-    color: #ff6b6b;
-    display: none;
-    margin-top: 5px;
-    font-size: 14px;
+.info{
+    color:#cbd5e1;
+    font-size:14px;
 }
 
-.success {
-    color: #4ade80;
-    display: none;
-    font-size: 14px;
-}
+.hidden{display:none}
 
-.info {
-    color: #cbd5e1;
-    font-size: 14px;
-}
-
-.hidden {
-    display: none;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    margin: 20px 0;
+hr{
+    border:0;
+    border-top:1px solid rgba(255,255,255,.2);
+    margin:20px 0;
 }
 </style>
 </head>
@@ -126,23 +112,15 @@ hr {
 
 <h1>📱 Paketim</h1>
 
-
-<!-- OPERATOR -->
-
 <div class="card">
 
 <label>Operatoru seçin</label>
 
 <select id="operator">
-
 <option value="">Operator seçin</option>
-
 <option value="azercell">Azercell</option>
-
 <option value="bakcell">Bakcell</option>
-
 <option value="nar">Nar</option>
-
 </select>
 
 <div id="operatorInfo" class="info"></div>
@@ -150,70 +128,32 @@ hr {
 </div>
 
 
-<!-- PAKET -->
-
 <div class="card">
 
 <label>Paket seçin</label>
 
-<div class="package"
-     data-name="5 GB"
-     data-price="3">
-
-5 GB
-<span class="price">3 AZN</span>
-
+<div class="package" data-name="5 GB" data-price="3">
+5 GB <span class="price">3 AZN</span>
 </div>
 
-
-<div class="package"
-     data-name="10 GB"
-     data-price="7">
-
-10 GB
-<span class="price">7 AZN</span>
-
+<div class="package" data-name="10 GB" data-price="7">
+10 GB <span class="price">7 AZN</span>
 </div>
 
-
-<div class="package"
-     data-name="15 GB"
-     data-price="10">
-
-15 GB
-<span class="price">10 AZN</span>
-
+<div class="package" data-name="15 GB" data-price="10">
+15 GB <span class="price">10 AZN</span>
 </div>
 
-
-<div class="package"
-     data-name="40 GB"
-     data-price="20">
-
-40 GB
-<span class="price">20 AZN</span>
-
+<div class="package" data-name="40 GB" data-price="20">
+40 GB <span class="price">20 AZN</span>
 </div>
 
-
-<div class="package"
-     data-name="80 GB"
-     data-price="30">
-
-80 GB
-<span class="price">30 AZN</span>
-
-</div>
-
-
-<div id="packageError" class="error">
-Zəhmət olmasa paket seçin.
+<div class="package" data-name="80 GB" data-price="30">
+80 GB <span class="price">30 AZN</span>
 </div>
 
 </div>
 
-
-<!-- NÖMRƏ -->
 
 <div class="card">
 
@@ -225,7 +165,6 @@ Zəhmət olmasa paket seçin.
     placeholder="050-123-45-67"
     maxlength="13"
     inputmode="numeric"
-    autocomplete="tel"
 >
 
 <div id="phoneError" class="error"></div>
@@ -234,56 +173,33 @@ Zəhmət olmasa paket seçin.
 ✓ Nömrə düzgündür
 </div>
 
-
-<!-- İRƏLİ -->
-
-<button
-    id="nextButton"
-    onclick="goNext()"
-    disabled>
-
+<button id="nextButton" onclick="goNext()" disabled>
 İrəli →
-
 </button>
 
 </div>
 
 
-<!-- ÖDƏNİŞ -->
-
-<div
-id="paymentSection"
-class="card hidden">
+<div id="paymentSection" class="card hidden">
 
 <h2>💳 Ödəniş</h2>
 
-<p>
-Paket:
-<strong id="selectedPackage"></strong>
-</p>
-
-<p>
-Nömrə:
-<strong id="selectedPhone"></strong>
-</p>
-
-<p>
-Məbləğ:
-<strong id="selectedPrice"></strong>
-</p>
+<p>Paket: <strong id="selectedPackage"></strong></p>
+<p>Nömrə: <strong id="selectedPhone"></strong></p>
+<p>Məbləğ: <strong id="selectedPrice"></strong></p>
 
 <hr>
 
 <h3>Kartla ödəniş</h3>
 
 <p class="info">
-Aşağıdakı kart məlumatını kopyalayıb ödəniş edə bilərsiniz.
+Demo kart məlumatı:
 </p>
 
 <input
     type="text"
     id="cardNumber"
-    value="KART_NOMRESI_BURAYA"
+    value="5315 **** **** 6081"
     readonly
 >
 
@@ -291,22 +207,14 @@ Aşağıdakı kart məlumatını kopyalayıb ödəniş edə bilərsiniz.
 📋 Kart nömrəsini kopyala
 </button>
 
-<div
-id="copyMessage"
-class="success">
-
+<div id="copyMessage" class="success">
 ✓ Kart nömrəsi kopyalandı
-
 </div>
 
 </div>
 
 
-<!-- DEMO QƏBİZ -->
-
-<div
-id="receiptSection"
-class="card hidden">
+<div id="receiptSection" class="card hidden">
 
 <h2>🧾 Qəbz</h2>
 
@@ -320,24 +228,16 @@ class="card hidden">
     accept="image/*"
 >
 
-<div
-id="receiptError"
-class="error">
-
+<div id="receiptError" class="error">
 Zəhmət olmasa qəbz seçin.
-
 </div>
 
 <button onclick="sendReceipt()">
 📤 Qəbzi göndər
 </button>
 
-<div
-id="receiptSuccess"
-class="success">
-
+<div id="receiptSuccess" class="success">
 ✓ Qəbz demo olaraq qəbul edildi.
-
 </div>
 
 </div>
@@ -347,105 +247,62 @@ class="success">
 
 <script>
 
-
-/* OPERATOR KODLARI */
-
 const prefixes = {
-
-    azercell: ["050", "051"],
-
-    bakcell: ["055", "099"],
-
-    nar: ["070", "077"]
-
+    azercell:["050","051"],
+    bakcell:["055","099"],
+    nar:["070","077"]
 };
 
-
-const operator =
-document.getElementById("operator");
-
-const phone =
-document.getElementById("phone");
-
-const nextButton =
-document.getElementById("nextButton");
-
-const paymentSection =
-document.getElementById("paymentSection");
-
-const receiptSection =
-document.getElementById("receiptSection");
+const operator = document.getElementById("operator");
+const phone = document.getElementById("phone");
+const nextButton = document.getElementById("nextButton");
+const paymentSection = document.getElementById("paymentSection");
+const receiptSection = document.getElementById("receiptSection");
 
 let selectedPackage = null;
 
 
-/* OPERATOR SEÇİMİ */
+/* Operator */
 
-operator.addEventListener("change", function() {
+operator.addEventListener("change",function(){
 
-    phone.value = "";
-
-    nextButton.disabled = true;
+    phone.value="";
+    nextButton.disabled=true;
 
     paymentSection.classList.add("hidden");
-
     receiptSection.classList.add("hidden");
 
-    document.getElementById("phoneError")
-        .style.display = "none";
+    document.getElementById("phoneError").style.display="none";
+    document.getElementById("phoneSuccess").style.display="none";
 
-    document.getElementById("phoneSuccess")
-        .style.display = "none";
-
-
-    if (this.value === "") {
-
-        document.getElementById("operatorInfo")
-            .textContent = "";
-
+    if(!this.value){
+        document.getElementById("operatorInfo").textContent="";
         return;
-
     }
 
-
-    document.getElementById("operatorInfo")
-        .textContent =
+    document.getElementById("operatorInfo").textContent =
         "İcazə verilən kodlar: " +
         prefixes[this.value].join(" / ");
 
 });
 
 
-/* PAKET SEÇİMİ */
+/* Paket */
 
-document.querySelectorAll(".package")
-.forEach(function(pkg) {
+document.querySelectorAll(".package").forEach(function(pkg){
 
-    pkg.addEventListener("click", function() {
+    pkg.addEventListener("click",function(){
 
-        document.querySelectorAll(".package")
-        .forEach(function(item) {
-
+        document.querySelectorAll(".package").forEach(function(item){
             item.classList.remove("selected");
-
         });
-
 
         this.classList.add("selected");
 
-
-        selectedPackage = {
-
-            name: this.dataset.name,
-
-            price: this.dataset.price
-
+        selectedPackage={
+            name:this.dataset.name,
+            price:this.dataset.price
         };
-
-
-        document.getElementById("packageError")
-            .style.display = "none";
-
 
         checkPhone();
 
@@ -454,261 +311,162 @@ document.querySelectorAll(".package")
 });
 
 
-/* NÖMRƏ FORMATLAMA */
+/* Nömrə formatı */
 
-phone.addEventListener("input", function() {
+phone.addEventListener("input",function(){
 
-    let numbers =
-        this.value.replace(/\D/g, "");
+    let numbers=this.value.replace(/\D/g,"");
 
-
-    /* Maksimum 10 rəqəm */
-
-    if (numbers.length > 10) {
-
-        numbers =
-            numbers.substring(0, 10);
-
+    if(numbers.length>10){
+        numbers=numbers.substring(0,10);
     }
 
+    let formatted="";
 
-    let formatted = "";
+    if(numbers.length>0)
+        formatted=numbers.substring(0,3);
 
+    if(numbers.length>3)
+        formatted+="-"+numbers.substring(3,6);
 
-    if (numbers.length > 0) {
+    if(numbers.length>6)
+        formatted+="-"+numbers.substring(6,8);
 
-        formatted =
-            numbers.substring(0, 3);
+    if(numbers.length>8)
+        formatted+="-"+numbers.substring(8,10);
 
-    }
-
-
-    if (numbers.length > 3) {
-
-        formatted += "-" +
-            numbers.substring(3, 6);
-
-    }
-
-
-    if (numbers.length > 6) {
-
-        formatted += "-" +
-            numbers.substring(6, 8);
-
-    }
-
-
-    if (numbers.length > 8) {
-
-        formatted += "-" +
-            numbers.substring(8, 10);
-
-    }
-
-
-    this.value = formatted;
-
+    this.value=formatted;
 
     checkPhone();
 
 });
 
 
-/* NÖMRƏ YOXLAMASI */
+/* Yoxlama */
 
-function checkPhone() {
+function checkPhone(){
 
-    const selectedOperator =
-        operator.value;
+    const error=document.getElementById("phoneError");
+    const success=document.getElementById("phoneSuccess");
 
-    const phoneError =
-        document.getElementById("phoneError");
+    nextButton.disabled=true;
 
-    const phoneSuccess =
-        document.getElementById("phoneSuccess");
+    if(!operator.value){
 
-
-    nextButton.disabled = true;
-
-
-    if (!selectedOperator) {
-
-        phoneError.textContent =
-            "Əvvəlcə operatoru seçin.";
-
-        phoneError.style.display = "block";
-
-        phoneSuccess.style.display = "none";
-
+        error.textContent="Əvvəlcə operatoru seçin.";
+        error.style.display="block";
+        success.style.display="none";
         return false;
-
     }
 
+    if(!selectedPackage){
 
-    if (!selectedPackage) {
-
-        phoneError.textContent =
-            "Əvvəlcə paket seçin.";
-
-        phoneError.style.display = "block";
-
-        phoneSuccess.style.display = "none";
-
+        error.textContent="Əvvəlcə paket seçin.";
+        error.style.display="block";
+        success.style.display="none";
         return false;
-
     }
 
+    const numbers=phone.value.replace(/\D/g,"");
 
-    const numbers =
-        phone.value.replace(/\D/g, "");
+    if(numbers.length!==10){
 
-
-    /* DƏQİQ 10 RƏQƏM */
-
-    if (numbers.length !== 10) {
-
-        phoneError.textContent =
+        error.textContent=
             "Nömrə 10 rəqəmdən ibarət olmalıdır.";
 
-        phoneError.style.display = "block";
-
-        phoneSuccess.style.display = "none";
+        error.style.display="block";
+        success.style.display="none";
 
         return false;
-
     }
 
+    const prefix=numbers.substring(0,3);
 
-    /* OPERATOR PREFİKSİ */
+    if(!prefixes[operator.value].includes(prefix)){
 
-    const prefix =
-        numbers.substring(0, 3);
-
-
-    if (!prefixes[selectedOperator]
-        .includes(prefix)) {
-
-        phoneError.textContent =
+        error.textContent=
             "Bu nömrə seçilmiş operatora aid deyil.";
 
-        phoneError.style.display = "block";
-
-        phoneSuccess.style.display = "none";
+        error.style.display="block";
+        success.style.display="none";
 
         return false;
-
     }
 
-
-    /* DÜZGÜNDÜR */
-
-    phoneError.style.display = "none";
-
-    phoneSuccess.style.display = "block";
-
-    nextButton.disabled = false;
+    error.style.display="none";
+    success.style.display="block";
+    nextButton.disabled=false;
 
     return true;
-
 }
 
 
-/* İRƏLİ DÜYMƏSİ */
+/* İrəli */
 
-function goNext() {
+function goNext(){
 
-    if (!checkPhone()) {
+    if(!checkPhone()) return;
 
-        return;
-
-    }
-
-
-    document.getElementById("selectedPackage")
-        .textContent =
+    document.getElementById("selectedPackage").textContent=
         selectedPackage.name;
 
-
-    document.getElementById("selectedPhone")
-        .textContent =
+    document.getElementById("selectedPhone").textContent=
         phone.value;
 
-
-    document.getElementById("selectedPrice")
-        .textContent =
-        selectedPackage.price + " AZN";
-
+    document.getElementById("selectedPrice").textContent=
+        selectedPackage.price+" AZN";
 
     paymentSection.classList.remove("hidden");
-
     receiptSection.classList.remove("hidden");
 
-
     paymentSection.scrollIntoView({
-        behavior: "smooth"
+        behavior:"smooth"
     });
 
 }
 
 
-/* KARTI KOPYALA */
+/* Kartı kopyala */
 
-function copyCard() {
+function copyCard(){
 
-    const card =
-        document.getElementById("cardNumber");
+    const card=document.getElementById("cardNumber");
 
+    navigator.clipboard.writeText(card.value).then(function(){
 
-    navigator.clipboard
-        .writeText(card.value)
-        .then(function() {
+        document.getElementById("copyMessage")
+            .style.display="block";
+
+        setTimeout(function(){
 
             document.getElementById("copyMessage")
-                .style.display = "block";
+                .style.display="none";
 
+        },2000);
 
-            setTimeout(function() {
-
-                document.getElementById("copyMessage")
-                    .style.display = "none";
-
-            }, 2000);
-
-        });
+    });
 
 }
 
 
-/* DEMO QƏBİZ */
+/* Demo qəbz */
 
-function sendReceipt() {
+function sendReceipt(){
 
-    const receipt =
-        document.getElementById("receipt");
+    const receipt=document.getElementById("receipt");
+    const error=document.getElementById("receiptError");
+    const success=document.getElementById("receiptSuccess");
 
-    const error =
-        document.getElementById("receiptError");
+    if(!receipt.files.length){
 
-    const success =
-        document.getElementById("receiptSuccess");
-
-
-    if (!receipt.files.length) {
-
-        error.style.display = "block";
-
-        success.style.display = "none";
+        error.style.display="block";
+        success.style.display="none";
 
         return;
-
     }
 
-
-    error.style.display = "none";
-
-    success.style.display = "block";
-
+    error.style.display="none";
+    success.style.display="block";
 }
 
 </script>
