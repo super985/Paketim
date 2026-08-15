@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paketim</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f7f8fc;
+  color:#111827;
+}
+
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  background:white;
+  padding:22px 18px 35px;
+}
+
+.logo{
+  text-align:center;
+  font-size:34px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+.logo span{
+  color:#ef3f68;
+}
+
+.status{
+  width:max-content;
+  margin:18px auto;
+  padding:11px 20px;
+  border-radius:30px;
+  background:#e9f8ef;
+  color:#218b4d;
+  font-weight:bold;
+}
+
+.subtitle{
+  text-align:center;
+  color:#737985;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.steps{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 10px;
+  border-radius:30px;
+  background:#fafafa;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  margin-bottom:30px;
+}
+
+.step{
+  text-align:center;
+  font-size:12px;
+  color:#9aa0aa;
+  font-weight:bold;
+}
+
+.step.active{
+  color:#ef3f68;
+}
+
+.title-small{
+  color:#ef3f68;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:4px;
+  margin-bottom:10px;
+}
+
+h1{
+  font-size:31px;
+  margin-bottom:8px;
+}
+
+.info{
+  color:#777;
+  margin-bottom:22px;
+}
+
+.operator{
+  border:1px solid #e4e6eb;
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.operator:hover{
+  transform:scale(1.01);
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.operator-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.icon{
+  width:60px;
+  height:60px;
+  border-radius:18px;
+  background:#f7f7f9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:14px;
+}
+
+.az{color:#5b2d91;}
+.nar{color:#d0004f;}
+.bak{color:#e52b45;}
+
+.operator-name{
+  font-size:20px;
+  font-weight:800;
+}
+
+.prefix{
+  color:#777;
+  margin-top:5px;
+}
+
+.arrow{
+  color:#aaa;
+  font-size:24px;
+}
+
+.section{
+  margin-top:30px;
+}
+
+input{
+  width:100%;
+  padding:17px;
+  border:1px solid #ddd;
+  border-radius:16px;
+  font-size:16px;
+  outline:none;
+  margin-top:10px;
+}
+
+input:focus{
+  border-color:#ef3f68;
+}
+
+.packages{
+  display:grid;
+  gap:12px;
+  margin-top:15px;
+}
+
+.package{
+  padding:18px;
+  border:1px solid #e3e5ea;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  background:white;
+}
+
+.package:hover{
+  border-color:#ef3f68;
+}
+
+.gb{
+  font-size:20px;
+  font-weight:800;
+}
+
+.price{
+  font-size:20px;
+  font-weight:900;
+  color:#ef3f68;
+}
+
+.continue{
+  width:100%;
+  border:0;
+  padding:18px;
+  margin-top:22px;
+  border-radius:18px;
+  background:#ef3f68;
+  color:white;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.note{
+  text-align:center;
+  color:#999;
+  font-size:12px;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="logo">
+    Paket<span>im</span>
+  </div>
+
+  <div class="status">
+    🟢 Kampaniya aktivdir
+  </div>
+
+  <div class="subtitle">
+    Sizə uyğun internet paketini seçin.
+  </div>
+
+  <div class="steps">
+    <div class="step active">●<br>Operator</div>
+    <div class="step">○<br>Nömrə</div>
+    <div class="step">○<br>Paket</div>
+    <div class="step">○<br>Ödəniş</div>
+    <div class="step">○<br>Qəbz</div>
+  </div>
+
+  <div class="title-small">BAŞLAYIN</div>
+
+  <h1>Operator seçin</h1>
+
+  <div class="info">
+    Nömrənizə uyğun operatoru seçin.
+  </div>
+
+  <div class="operator" onclick="selectOperator('Azercell')">
+    <div class="operator-left">
+      <div class="icon az">AZ</div>
+      <div>
+        <div class="operator-name">Azercell</div>
+        <div class="prefix">050 • 051 • 010</div>
+      </div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="operator" onclick="selectOperator('Nar')">
+    <div class="operator-left">
+      <div class="icon nar">nar</div>
+      <div>
+        <div class="operator-name">Nar</div>
+        <div class="prefix">070 • 077</div>
+      </div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="operator" onclick="selectOperator('Bakcell')">
+    <div class="operator-left">
+      <div class="icon bak">B</div>
+      <div>
+        <div class="operator-name">Bakcell</div>
+        <div class="prefix">055 • 099</div>
+      </div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="section">
+
+    <div class="title-small">NÖMRƏ</div>
+
+    <h1>Telefon nömrəniz</h1>
+
+    <input
+      type="tel"
+      id="phone"
+      placeholder="050 123 45 67"
+      maxlength="13"
+    >
+
+  </div>
+
+  <div class="section">
+
+    <div class="title-small">PAKETLƏR</div>
+
+    <h1>İnternet paketi</h1>
+
+    <div class="packages">
+
+      <div class="package" onclick="selectPackage('10 GB','5 AZN')">
+        <div class="gb">10 GB</div>
+        <div class="price">5 AZN</div>
+      </div>
+
+      <div class="package" onclick="selectPackage('20 GB','10 AZN')">
+        <div class="gb">20 GB</div>
+        <div class="price">10 AZN</div>
+      </div>
+
+      <div class="package" onclick="selectPackage('50 GB','20 AZN')">
+        <div class="gb">50 GB</div>
+        <div class="price">20 AZN</div>
+      </div>
+
+      <div class="package" onclick="selectPackage('80 GB','30 AZN')">
+        <div class="gb">80 GB</div>
+        <div class="price">30 AZN</div>
+      </div>
+
+      <div class="package" onclick="selectPackage('100 GB','50 AZN')">
+        <div class="gb">100 GB</div>
+        <div class="price">50 AZN</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="continue" onclick="continueOrder()">
+    Davam et →
+  </button>
+
+  <div class="note">
+    Paketim • Rəqəmsal xidmət platforması
+  </div>
+
+</div>
+
+<script>
+
+let selectedOperator = "";
+let selectedPackage = "";
+
+function selectOperator(operator){
+  selectedOperator = operator;
+  alert(operator + " seçildi.");
+}
+
+function selectPackage(gb,price){
+  selectedPackage = gb + " — " + price;
+  alert(selectedPackage + " seçildi.");
+}
+
+function continueOrder(){
+
+  const phone = document.getElementById("phone").value;
+
+  if(!selectedOperator){
+    alert("Zəhmət olmasa operator seçin.");
+    return;
+  }
+
+  if(!phone){
+    alert("Zəhmət olmasa telefon nömrənizi daxil edin.");
+    return;
+  }
+
+  if(!selectedPackage){
+    alert("Zəhmət olmasa paket seçin.");
+    return;
+  }
+
+  alert(
+    "Sifarişiniz hazırlanır!\n\n" +
+    "Operator: " + selectedOperator +
+    "\nNömrə: " + phone +
+    "\nPaket: " + selectedPackage
+  );
+}
+
+</script>
+
+</body>
+</html>
