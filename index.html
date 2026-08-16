@@ -2,7 +2,7 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paketim Pay</title>
 
 <style>
@@ -11,14 +11,11 @@
 body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
-    color:#fff;
-    background:
-    radial-gradient(circle at 20% 10%,#123846 0,#091c29 35%,#08111c 70%,#12151e 100%);
-    min-height:100vh;
+    background:linear-gradient(145deg,#06151f,#0b202c,#111722);
+    color:white;
 }
 
 .container{
-    width:100%;
     max-width:620px;
     margin:auto;
     padding:20px 18px 60px;
@@ -28,14 +25,14 @@ body{
 
 .logo{
     text-align:center;
-    padding:12px 0 25px;
+    padding:15px 0 28px;
 }
 
 .logo-main{
     font-size:43px;
     font-weight:900;
     letter-spacing:2px;
-    background:linear-gradient(90deg,#7337df,#35e1d1,#62d8ff);
+    background:linear-gradient(90deg,#7437df,#35dfce,#54cfff);
     -webkit-background-clip:text;
     color:transparent;
 }
@@ -44,71 +41,71 @@ body{
     font-size:25px;
     font-weight:900;
     letter-spacing:8px;
-    color:#dce8ee;
 }
 
-/* TITLES */
+/* BAŞLIQ */
 
 .title{
     text-align:center;
-    font-size:28px;
+    font-size:30px;
     font-weight:900;
-    margin:15px 0 25px;
+    margin-bottom:28px;
 }
 
 /* OPERATOR */
 
 .operator{
-    background:#fff;
-    color:#172033;
-    border-radius:28px;
-    padding:32px 20px;
-    min-height:260px;
-    margin-bottom:20px;
+    background:white;
+    color:#182033;
+    border-radius:30px;
+    padding:35px 20px;
+    min-height:285px;
+    margin-bottom:22px;
     text-align:center;
-    border:3px solid transparent;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
     cursor:pointer;
+    border:3px solid transparent;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
 }
 
 .operator.selected{
-    border-color:#38d7c5;
+    border-color:#36d9c5;
 }
 
 .operator-logo{
-    height:90px;
+    height:95px;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .azlogo{
-    color:#583092;
+    color:#58328f;
     font-size:30px;
-    font-weight:800;
+    font-weight:900;
 }
 
 .azlogo span{
-    font-size:55px;
+    font-size:58px;
     font-style:italic;
 }
 
 .narlogo{
-    width:75px;
-    height:58px;
+    width:78px;
+    height:60px;
     border-radius:50%;
-    background:#b9004f;
+    background:#ba0050;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:28px;
+    color:white;
+    font-size:29px;
     font-weight:bold;
 }
 
 .baklogo{
-    color:#ed164d;
-    font-size:30px;
+    color:#e50046;
+    font-size:31px;
     font-weight:900;
 }
 
@@ -119,44 +116,47 @@ body{
 
 .prefix{
     margin-top:8px;
-    color:#9aa2ad;
+    color:#9da4ae;
     font-size:17px;
 }
 
 /* BOX */
 
 .box{
-    background:rgba(8,25,38,.82);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:25px;
-    padding:22px;
-    margin-bottom:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    background:rgba(8,25,38,.88);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:26px;
+    padding:23px;
+    margin-bottom:22px;
 }
 
 .hidden{
     display:none;
 }
 
-/* PHONE */
-
-.phone-title{
+.box-title{
     text-align:center;
-    font-size:22px;
-    font-weight:800;
-    margin-bottom:16px;
+    font-size:23px;
+    font-weight:900;
+    margin-bottom:17px;
 }
+
+/* NÖMRƏ */
 
 .phone{
     width:100%;
-    padding:17px;
-    border-radius:15px;
-    border:1px solid #314653;
-    background:#07131e;
-    color:#fff;
+    padding:18px;
+    border-radius:16px;
+    border:2px solid #304653;
+    background:#07141f;
+    color:white;
     font-size:21px;
     text-align:center;
     outline:none;
+}
+
+.phone:focus{
+    border-color:#35d8c5;
 }
 
 .error{
@@ -173,20 +173,20 @@ body{
     margin-top:10px;
 }
 
-/* PACKAGES */
+/* PAKET */
 
 .package{
-    padding:19px;
-    margin:11px 0;
-    border:1px solid #263b49;
-    border-radius:19px;
+    padding:20px;
+    margin:12px 0;
+    border:1px solid #293e4c;
+    border-radius:20px;
     background:rgba(255,255,255,.04);
     cursor:pointer;
 }
 
 .package.selected{
     border:2px solid #35d8c5;
-    background:rgba(53,216,197,.09);
+    background:rgba(53,216,197,.1);
 }
 
 .package-row{
@@ -196,18 +196,18 @@ body{
 }
 
 .gb{
-    font-size:25px;
+    font-size:26px;
     font-weight:900;
 }
 
 .price{
-    font-size:21px;
+    font-size:22px;
     font-weight:900;
-    color:#52e2c9;
+    color:#51e0c9;
 }
 
 .details{
-    color:#9baab4;
+    color:#9baab5;
     font-size:14px;
     margin-top:9px;
 }
@@ -215,8 +215,8 @@ body{
 .next{
     width:100%;
     border:0;
-    border-radius:15px;
-    padding:16px;
+    border-radius:16px;
+    padding:17px;
     margin-top:14px;
     background:linear-gradient(90deg,#19bcae,#45e0ca);
     color:#06201f;
@@ -228,59 +228,53 @@ body{
     opacity:.35;
 }
 
-/* PAYMENT STEP */
+/* ÖDƏNİŞ */
 
 .steps{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:8px;
-    margin:5px 0 28px;
+    margin:8px 0 28px;
 }
 
 .step{
-    width:39px;
-    height:39px;
+    width:40px;
+    height:40px;
     border-radius:50%;
-    background:#11575b;
+    background:#11565a;
     display:flex;
     align-items:center;
     justify-content:center;
     font-weight:900;
-    color:#9ee9df;
+    color:#a0ebe0;
 }
 
 .step.active{
     background:#35d8c5;
     color:#06201f;
-    box-shadow:0 0 20px rgba(53,216,197,.5);
+    box-shadow:0 0 20px rgba(53,216,197,.45);
 }
 
 .line{
-    width:35px;
+    width:32px;
     height:2px;
-    background:#1d7776;
+    background:#217574;
 }
 
 .payment-title{
     font-size:30px;
     font-weight:900;
-    margin:10px 0 22px;
+    margin-bottom:20px;
 }
 
-.back{
-    color:#9baab4;
-    font-size:17px;
-    margin-bottom:18px;
-}
-
-/* SUMMARY */
+/* SİFARİŞ */
 
 .summary{
-    border:1px solid #253745;
+    border:1px solid #253846;
     border-radius:22px;
     padding:20px;
-    background:rgba(10,20,34,.75);
+    background:rgba(8,19,31,.8);
 }
 
 .summary-top{
@@ -291,47 +285,61 @@ body{
 
 .summary-phone{
     font-size:22px;
-    font-weight:800;
+    font-weight:900;
 }
 
 .summary-package{
-    color:#9baab4;
-    margin-top:6px;
+    color:#9baab5;
+    margin-top:7px;
 }
 
 .summary-price{
-    text-align:right;
     font-size:25px;
     font-weight:900;
-    color:#fff;
+    text-align:right;
 }
 
-.summary-small{
-    color:#55dfca;
-    font-size:17px;
+.summary-price-small{
+    color:#51e0c9;
+    text-align:right;
     margin-top:5px;
 }
 
 .instruction{
+    color:#8797a3;
     text-align:center;
-    color:#8798a5;
     margin-top:18px;
 }
 
-/* CARD */
+/* KART */
 
 .bank-card{
-    margin-top:28px;
-    border-radius:32px;
-    padding:28px;
-    min-height:390px;
-    background:
-    radial-gradient(circle at 85% 20%,rgba(72,219,210,.38),transparent 25%),
-    radial-gradient(circle at 10% 90%,rgba(78,57,180,.4),transparent 30%),
-    linear-gradient(135deg,#243b52,#182333 65%,#27323e);
-    box-shadow:0 20px 45px rgba(0,0,0,.35);
     position:relative;
     overflow:hidden;
+    margin-top:28px;
+    padding:28px;
+    min-height:390px;
+    border-radius:32px;
+
+    background:
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(66,220,210,.35),
+        transparent 27%
+    ),
+    radial-gradient(
+        circle at 10% 90%,
+        rgba(85,55,180,.35),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #283d53,
+        #182331 65%,
+        #293440
+    );
+
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
 }
 
 .card-top{
@@ -343,8 +351,8 @@ body{
 .chip{
     width:70px;
     height:45px;
-    border-radius:15px;
-    background:linear-gradient(135deg,#ffe16a,#f6ae28);
+    border-radius:14px;
+    background:linear-gradient(135deg,#ffe46d,#f2ad27);
 }
 
 .card-brand{
@@ -353,40 +361,41 @@ body{
 }
 
 .card-number{
-    font-size:24px;
+    font-size:22px;
     letter-spacing:3px;
-    margin:48px 0 32px;
     line-height:1.8;
+    margin-top:48px;
+    padding-right:5px;
+    white-space:nowrap;
 }
 
 .copy{
-    position:absolute;
-    right:25px;
-    top:157px;
     border:0;
     border-radius:15px;
     padding:13px 17px;
-    background:rgba(255,255,255,.13);
+    margin-top:15px;
+    background:rgba(255,255,255,.15);
     color:white;
     font-size:16px;
-    font-weight:800;
+    font-weight:900;
 }
 
 .card-label{
-    color:#9daab6;
+    margin-top:28px;
+    color:#9eabb6;
     font-size:13px;
     letter-spacing:2px;
 }
 
 .card-owner{
-    font-size:21px;
-    font-weight:800;
     margin-top:8px;
+    font-size:21px;
+    font-weight:900;
 }
 
 .bank-name{
     display:inline-block;
-    margin-top:25px;
+    margin-top:23px;
     padding:8px 18px;
     border-radius:20px;
     background:rgba(255,190,40,.25);
@@ -395,7 +404,7 @@ body{
 }
 
 .amount{
-    margin-top:25px;
+    margin-top:23px;
     padding:15px;
     border-radius:18px;
     background:rgba(0,0,0,.22);
@@ -405,22 +414,22 @@ body{
     font-weight:900;
 }
 
-/* RECEIPT */
+/* QƏBZ */
 
 .upload{
     margin-top:25px;
-    border:2px dashed #168e8a;
-    border-radius:25px;
     padding:28px 20px;
+    border:2px dashed #168f8b;
+    border-radius:25px;
     text-align:center;
-    background:rgba(10,50,55,.28);
+    background:rgba(8,49,54,.3);
 }
 
 .upload-title{
     color:#4fe0ca;
     font-size:22px;
     font-weight:900;
-    margin-bottom:15px;
+    margin-bottom:16px;
 }
 
 .file{
@@ -443,7 +452,7 @@ body{
 .footer{
     text-align:center;
     color:#536674;
-    margin-top:40px;
+    margin-top:38px;
     font-size:14px;
 }
 </style>
@@ -453,7 +462,7 @@ body{
 
 <div class="container">
 
-<!-- LOGO -->
+<!-- PAKETİM PAY -->
 
 <div class="logo">
     <div class="logo-main">PAKETİM</div>
@@ -461,7 +470,7 @@ body{
 </div>
 
 
-<!-- OPERATOR -->
+<!-- OPERATORLAR -->
 
 <div id="operatorScreen">
 
@@ -469,9 +478,7 @@ body{
     Operatoru seçin
 </div>
 
-
-<div class="operator"
-     data-operator="azercell">
+<div class="operator" data-operator="azercell">
 
     <div class="operator-logo azlogo">
         <span>⌁</span> Azercell
@@ -488,11 +495,12 @@ body{
 </div>
 
 
-<div class="operator"
-     data-operator="nar">
+<div class="operator" data-operator="nar">
 
     <div class="operator-logo">
-        <div class="narlogo">nar</div>
+        <div class="narlogo">
+            nar
+        </div>
     </div>
 
     <div class="operator-name">
@@ -506,8 +514,7 @@ body{
 </div>
 
 
-<div class="operator"
-     data-operator="bakcell">
+<div class="operator" data-operator="bakcell">
 
     <div class="operator-logo baklogo">
         ✦ bakcell
@@ -528,248 +535,241 @@ body{
 
 <!-- NÖMRƏ -->
 
-<div id="phoneBox"
-     class="box hidden">
+<div id="phoneBox" class="box hidden">
 
-<div class="phone-title">
-    Mobil nömrənizi daxil edin
-</div>
+    <div class="box-title">
+        Mobil nömrənizi daxil edin
+    </div>
 
-<input
-    id="phone"
-    class="phone"
-    type="tel"
-    maxlength="13"
-    inputmode="numeric"
-    placeholder="050-123-45-67"
->
+    <input
+        id="phone"
+        class="phone"
+        type="tel"
+        maxlength="13"
+        inputmode="numeric"
+        placeholder="050-123-45-67"
+    >
 
-<div id="phoneError"
-     class="error">
-</div>
+    <div id="phoneError" class="error"></div>
 
-<div id="phoneSuccess"
-     class="success">
-    ✓ Nömrə düzgündür
-</div>
+    <div id="phoneSuccess" class="success">
+        ✓ Nömrə düzgündür
+    </div>
 
 </div>
 
 
-<!-- PAKET -->
+<!-- PAKETLƏR -->
 
-<div id="packageBox"
-     class="box hidden">
+<div id="packageBox" class="box hidden">
 
-<div class="phone-title">
-    Paket seçin
-</div>
-
-
-<div class="package"
-     data-gb="15"
-     data-price="5">
-
-<div class="package-row">
-    <div class="gb">15 GB</div>
-    <div class="price">5 AZN</div>
-</div>
-
-<div class="details">
-    📞 Dəqiqə+400 &nbsp;&nbsp; 📅 30 gün
-</div>
-
-</div>
+    <div class="box-title">
+        İnternet paketini seçin
+    </div>
 
 
-<div class="package"
-     data-gb="20"
-     data-price="10">
+    <div class="package"
+         data-gb="15"
+         data-price="5">
 
-<div class="package-row">
-    <div class="gb">20 GB</div>
-    <div class="price">10 AZN</div>
-</div>
+        <div class="package-row">
+            <div class="gb">15 GB</div>
+            <div class="price">5 AZN</div>
+        </div>
 
-<div class="details">
-    📞 Dəqiqə+500 &nbsp;&nbsp; 📅 30 gün
-</div>
+        <div class="details">
+            📞 Dəqiqə:400 &nbsp;&nbsp; 📅 30 gün
+        </div>
 
-</div>
-
-
-<div class="package"
-     data-gb="60"
-     data-price="20">
-
-<div class="package-row">
-    <div class="gb">60 GB</div>
-    <div class="price">20 AZN</div>
-</div>
-
-<div class="details">
-    📞 Dəqiqə+600 &nbsp;&nbsp; 📅 30 gün
-</div>
-
-</div>
+    </div>
 
 
-<div class="package"
-     data-gb="100"
-     data-price="30">
+    <div class="package"
+         data-gb="20"
+         data-price="10">
 
-<div class="package-row">
-    <div class="gb">100 GB</div>
-    <div class="price">30 AZN</div>
-</div>
+        <div class="package-row">
+            <div class="gb">20 GB</div>
+            <div class="price">10 AZN</div>
+        </div>
 
-<div class="details">
-    📞Dəqiqə+700 &nbsp;&nbsp; 📅 30 gün
-</div>
+        <div class="details">
+            📞 Dəqiqə:500 &nbsp;&nbsp; 📅 30 gün
+        </div>
 
-</div>
+    </div>
 
 
-<button
-    id="next"
-    class="next"
-    disabled>
-    Ödənişə keç →
-</button>
+    <div class="package"
+         data-gb="60"
+         data-price="20">
+
+        <div class="package-row">
+            <div class="gb">60 GB</div>
+            <div class="price">20 AZN</div>
+        </div>
+
+        <div class="details">
+            📞 Dəqiqə:600 &nbsp;&nbsp; 📅 30 gün
+        </div>
+
+    </div>
+
+
+    <div class="package"
+         data-gb="100"
+         data-price="30">
+
+        <div class="package-row">
+            <div class="gb">100 GB</div>
+            <div class="price">30 AZN</div>
+        </div>
+
+        <div class="details">
+            📞 Dəqiqə:700 &nbsp;&nbsp; 📅 30 gün
+        </div>
+
+    </div>
+
+
+    <button id="next"
+            class="next"
+            disabled>
+        Ödənişə keç →
+    </button>
 
 </div>
 
 
 <!-- ÖDƏNİŞ -->
 
-<div id="paymentBox"
-     class="hidden">
+<div id="paymentBox" class="hidden">
 
-<div class="steps">
-    <div class="step">✓</div>
-    <div class="line"></div>
-    <div class="step">✓</div>
-    <div class="line"></div>
-    <div class="step">✓</div>
-    <div class="line"></div>
-    <div class="step active">4</div>
-</div>
-
-
-<div class="payment-title">
-    Ödəniş və çek
-</div>
+    <div class="steps">
+        <div class="step">✓</div>
+        <div class="line"></div>
+        <div class="step">✓</div>
+        <div class="line"></div>
+        <div class="step">✓</div>
+        <div class="line"></div>
+        <div class="step active">4</div>
+    </div>
 
 
-<div class="summary">
-
-<div class="summary-top">
-
-<div>
-    <div id="payPhone"
-         class="summary-phone"></div>
-
-    <div id="payPackage"
-         class="summary-package"></div>
-</div>
-
-<div>
-    <div id="payPrice"
-         class="summary-price"></div>
-
-    <div id="payPrice2"
-         class="summary-small"></div>
-</div>
-
-</div>
-
-<div class="instruction">
-    Aşağıdakı karta ödəniş edin, sonra çeki yükləyin.
-</div>
-
-</div>
+    <div class="payment-title">
+        Ödəniş və çek
+    </div>
 
 
-<!-- REAL KART -->
+    <div class="summary">
 
-<div class="bank-card">
+        <div class="summary-top">
 
-<div class="card-top">
+            <div>
+                <div id="payPhone"
+                     class="summary-phone"></div>
 
-<div class="chip"></div>
+                <div id="payPackage"
+                     class="summary-package"></div>
+            </div>
 
-<div class="card-brand">
-    Paketim Pay
-</div>
+            <div>
+                <div id="payPrice"
+                     class="summary-price"></div>
 
-</div>
+                <div id="payPriceSmall"
+                     class="summary-price-small"></div>
+            </div>
 
+        </div>
 
-<div class="card-number"> 
-    5315 9921 2761 6081
-</div>
+        <div class="instruction">
+            Aşağıdakı karta ödəniş edin, sonra çeki yükləyin.
+        </div>
 
-<button
-    class="copy"
-    id="copy">
-    ▣ Kopyala
-</button>
-
-
-<div class="card-label">
-    BANK OF BAKU
-</div>
-
-<div class="card-owner">
-    PAKETİM PAY
-</div>
+    </div>
 
 
-<div class="bank-name">
-    Ödəniş kartı
-</div>
+    <!-- KART -->
+
+    <div class="bank-card">
+
+        <div class="card-top">
+
+            <div class="chip"></div>
+
+            <div class="card-brand">
+                Paketim Pay
+            </div>
+
+        </div>
 
 
-<div id="cardAmount"
-     class="amount">
-    Ödəniş məbləği: 0 AZN
-</div>
-
-</div>
+        <div class="card-number">
+            5315 9921 2761 6081
+        </div>
 
 
-<!-- QƏBZ -->
-
-<div class="upload">
-
-<div class="upload-title">
-    ⇧ Çeki yüklə və göndər
-</div>
-
-<input
-    id="receipt"
-    class="file"
-    type="file"
-    accept="image/*"
->
-
-<button
-    id="send"
-    class="send">
-    Çeki göndər
-</button>
-
-<div id="receiptSuccess"
-     class="success">
-    ✓ Qəbz qəbul edildi
-</div>
-
-</div>
+        <button id="copy"
+                class="copy">
+            ▣ Kopyala
+        </button>
 
 
-<div class="footer">
-    © 2026 Paketim Pay — ödəniş səhifəsi
-</div>
+        <div class="card-label">
+            BANK OF BAKU
+        </div>
+
+        <div class="card-owner">
+            PAKETİM PAY
+        </div>
+
+
+        <div class="bank-name">
+            Ödəniş kartı
+        </div>
+
+
+        <div id="cardAmount"
+             class="amount">
+            Ödəniş məbləği: 0 AZN
+        </div>
+
+    </div>
+
+
+    <!-- QƏBZ -->
+
+    <div class="upload">
+
+        <div class="upload-title">
+            ⇧ Çeki yüklə və göndər
+        </div>
+
+        <input
+            id="receipt"
+            class="file"
+            type="file"
+            accept="image/*"
+        >
+
+        <button
+            id="send"
+            class="send">
+            Çeki göndər
+        </button>
+
+        <div id="receiptSuccess"
+             class="success">
+            ✓ Qəbz qəbul edildi
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        © 2026 Paketim Pay — ödəniş səhifəsi
+    </div>
 
 </div>
 
@@ -777,6 +777,8 @@ body{
 
 
 <script>
+
+const CARD_NUMBER = "5315 9921 2761 6081";
 
 const prefixes = {
     azercell:["050","051","010"],
@@ -787,32 +789,16 @@ const prefixes = {
 let selectedOperator = "";
 let selectedPackage = null;
 
-const operators =
-document.querySelectorAll(".operator");
-
-const phoneBox =
-document.getElementById("phoneBox");
-
-const packageBox =
-document.getElementById("packageBox");
-
-const phone =
-document.getElementById("phone");
-
-const next =
-document.getElementById("next");
-
-const paymentBox =
-document.getElementById("paymentBox");
-
 
 /* OPERATOR */
 
-operators.forEach(function(card){
+document.querySelectorAll(".operator")
+.forEach(function(card){
 
     card.addEventListener("click",function(){
 
-        operators.forEach(function(x){
+        document.querySelectorAll(".operator")
+        .forEach(function(x){
             x.classList.remove("selected");
         });
 
@@ -821,23 +807,23 @@ operators.forEach(function(card){
         selectedOperator =
             this.dataset.operator;
 
-        phone.value = "";
+        document.getElementById("phoneBox")
+            .classList.remove("hidden");
 
-        phoneBox.classList.remove("hidden");
+        document.getElementById("packageBox")
+            .classList.add("hidden");
 
-        packageBox.classList.add("hidden");
+        document.getElementById("paymentBox")
+            .classList.add("hidden");
 
-        paymentBox.classList.add("hidden");
+        document.getElementById("phone")
+            .value = "";
 
-        next.disabled = true;
+        document.getElementById("next")
+            .disabled = true;
 
-        document.getElementById("phoneError")
-            .style.display = "none";
-
-        document.getElementById("phoneSuccess")
-            .style.display = "none";
-
-        phone.focus();
+        document.getElementById("phone")
+            .focus();
 
     });
 
@@ -846,13 +832,15 @@ operators.forEach(function(card){
 
 /* NÖMRƏ */
 
-phone.addEventListener("input",function(){
+document.getElementById("phone")
+.addEventListener("input",function(){
 
     let n =
         this.value.replace(/\D/g,"");
 
-    if(n.length > 10)
+    if(n.length > 10){
         n = n.substring(0,10);
+    }
 
     let f = "";
 
@@ -877,11 +865,20 @@ phone.addEventListener("input",function(){
 
 function checkPhone(){
 
+    const phone =
+        document.getElementById("phone");
+
     const error =
         document.getElementById("phoneError");
 
     const success =
         document.getElementById("phoneSuccess");
+
+    const packageBox =
+        document.getElementById("packageBox");
+
+    const next =
+        document.getElementById("next");
 
     const n =
         phone.value.replace(/\D/g,"");
@@ -890,12 +887,11 @@ function checkPhone(){
     success.style.display = "none";
 
     packageBox.classList.add("hidden");
-    next.disabled = true;
 
+    next.disabled = true;
 
     if(n.length === 0)
         return;
-
 
     if(n.length !== 10){
 
@@ -907,10 +903,8 @@ function checkPhone(){
         return;
     }
 
-
     const prefix =
         n.substring(0,3);
-
 
     if(!prefixes[selectedOperator]
         .includes(prefix)){
@@ -923,11 +917,9 @@ function checkPhone(){
         return;
     }
 
-
     success.style.display = "block";
 
     packageBox.classList.remove("hidden");
-
 }
 
 
@@ -950,7 +942,8 @@ document.querySelectorAll(".package")
             price:this.dataset.price
         };
 
-        next.disabled = false;
+        document.getElementById("next")
+            .disabled = false;
 
     });
 
@@ -959,42 +952,27 @@ document.querySelectorAll(".package")
 
 /* ÖDƏNİŞ */
 
-next.addEventListener("click",function(){
+document.getElementById("next")
+.addEventListener("click",function(){
 
     if(!selectedPackage)
         return;
 
-
-    let name = "";
-
-    if(selectedOperator === "azercell")
-        name = "Azercell";
-
-    if(selectedOperator === "nar")
-        name = "Nar";
-
-    if(selectedOperator === "bakcell")
-        name = "Bakcell";
-
-
     document.getElementById("payPhone")
-        .textContent = phone.value;
-
+        .textContent =
+        document.getElementById("phone").value;
 
     document.getElementById("payPackage")
         .textContent =
         selectedPackage.gb + " GB";
 
-
     document.getElementById("payPrice")
         .textContent =
         selectedPackage.price + " AZN";
 
-
-    document.getElementById("payPrice2")
+    document.getElementById("payPriceSmall")
         .textContent =
         selectedPackage.price + " AZN";
-
 
     document.getElementById("cardAmount")
         .textContent =
@@ -1002,34 +980,35 @@ next.addEventListener("click",function(){
         selectedPackage.price +
         " AZN";
 
+    document.getElementById("paymentBox")
+        .classList.remove("hidden");
 
-    paymentBox.classList.remove("hidden");
-
-
-    paymentBox.scrollIntoView({
-        behavior:"smooth"
-    });
+    document.getElementById("paymentBox")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 });
 
 
-/* KOPYALA */
+/* KARTI KOPYALA */
 
 document.getElementById("copy")
 .addEventListener("click",function(){
 
-    const value =
-        "5315 **** **** 6081";
-
-    navigator.clipboard.writeText(value)
+    navigator.clipboard.writeText(CARD_NUMBER)
     .then(function(){
-
-        this.textContent = "✓ Kopyalandı";
 
         const button = this;
 
+        button.textContent =
+            "✓ Kopyalandı";
+
         setTimeout(function(){
-            button.textContent = "▣ Kopyala";
+
+            button.textContent =
+                "▣ Kopyala";
+
         },2000);
 
     }.bind(this));
